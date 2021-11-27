@@ -4,7 +4,8 @@ import ListScreen from "./screens/ListScreen";
 import ImageScreen from "./screens/ImageScreen";
 import CounterScreen from "./screens/CounterScreen";
 import ColorScreen from "./screens/ColorScreen";
-import SquareSceen from "./screens/SquareSceen";
+import SquareScreen from "./screens/SquareScreen";
+import SquareScreen2 from "./screens/SquareScreen2";
 
 export const Routes = {
   HomeScreen: HomeScreen,
@@ -13,5 +14,6 @@ export const Routes = {
   ImageScreen: ImageScreen,
   CounterScreen: CounterScreen,
   ColorScreen: ColorScreen,
-  SquareSceen: SquareSceen,
+  SquareScreen: SquareScreen,
+  SquareScreen2: SquareScreen2,
 };
