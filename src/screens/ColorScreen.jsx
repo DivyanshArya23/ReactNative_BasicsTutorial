@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { StyleSheet, Text, View, FlatList, Button } from "react-native";
+import ColorBox from "../components/ColorBox";
 
 const ColorScreen = () => {
   const [boxArray, setBoxArray] = useState([]);
@@ -27,8 +28,13 @@ const ColorScreen = () => {
         keyExtractor={(item) => item}
         data={boxArray}
         renderItem={({ item, index }) => {
-          console.log(item);
-          return <Text style={{ backgroundColor: item, ...styles.colorBox }} />;
+          return (
+            <ColorBox
+              color={item}
+              height={styles.colorBox.height}
+              width={styles.colorBox.width}
+            />
+          );
         }}
       />
     </View>
@@ -39,7 +45,6 @@ export default ColorScreen;
 
 const styles = StyleSheet.create({
   colorBox: {
-    // backgroundColor: "#00ff00",
     height: 50,
     width: 50,
   },

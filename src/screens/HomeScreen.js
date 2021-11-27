@@ -18,6 +18,7 @@ const HomeScreen = ({ navigation }) => {
     <View>
       <Text style={styles.text}>HomeScreen</Text>
       <FlatList
+        keyExtractor={(ele) => ele.title}
         data={buttons}
         renderItem={({ item, index }) => {
           return (
