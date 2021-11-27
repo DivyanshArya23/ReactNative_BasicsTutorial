@@ -8,15 +8,15 @@ const ColorCounter2 = ({ color, counter, dispatch, jumpValue = 1 }) => {
       <Button
         title={`+ ${color}`}
         onPress={() => {
-          dispatch({ colorToChange: color.toLowerCase(), amount: jumpValue });
+          dispatch({ type: `change_${color.toLowerCase()}`, payload: jumpValue });
         }}
       />
       <Button
         title={`- ${color}`}
         onPress={() => {
           dispatch({
-            colorToChange: color.toLowerCase(),
-            amount: -1 * jumpValue,
+            type: `change_${color.toLowerCase()}`,
+            payload: -1 * jumpValue,
           });
         }}
       />

@@ -10,18 +10,19 @@ const initialState = {
 };
 
 const reducer = (state, action) => {
-  if (state[action.colorToChange] + action.amount > 255) {
-    action.amount = 255 - state[action.colorToChange];
-  } else if (state[action.colorToChange] + action.amount < 0) {
-    action.amount = -1 * state[action.colorToChange];
+  const colorName = action.type.split("_")[1];
+  if (state[colorName] + action.payload > 255) {
+    action.payload = 255 - state[colorName];
+  } else if (state[colorName] + action.payload < 0) {
+    action.payload = -1 * state[colorName];
   }
-  switch (action.colorToChange) {
-    case "red":
-      return { ...state, red: state.red + action.amount };
-    case "green":
-      return { ...state, green: state.green + action.amount };
-    case "blue":
-      return { ...state, blue: state.blue + action.amount };
+  switch (action.type) {
+    case "change_red":
+      return { ...state, red: state.red + action.payload };
+    case "change_green":
+      return { ...state, green: state.green + action.payload };
+    case "change_blue":
+      return { ...state, blue: state.blue + action.payload };
     default:
       return state;
   }
@@ -32,7 +33,7 @@ const SquareSceen2 = () => {
 
   return (
     <View>
-      <Text style={styles.Heading}>Square Screen 2</Text>
+      <Text style={styles.center}>Square Screen 2</Text>
       <ColorCounter2
         color="Red"
         counter={state.red}
@@ -55,6 +56,7 @@ const SquareSceen2 = () => {
         style={styles.Color}
       >{`rgb(${state.red},${state.green},${state.blue})`}</Text>
       <ColorBox
+        style={styles.center}
         color={`rgb(${state.red},${state.green},${state.blue})`}
         height={200}
         width={200}
@@ -66,7 +68,9 @@ const SquareSceen2 = () => {
 export default SquareSceen2;
 
 const styles = StyleSheet.create({
-  Heading: {
+  center: {
+    marginLeft:'auto',
+    marginRight:'auto',
     textAlign: "center",
   },
   Color: {
