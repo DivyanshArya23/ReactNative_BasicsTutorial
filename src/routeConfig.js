@@ -7,6 +7,7 @@ import ColorScreen from "./screens/ColorScreen";
 import SquareScreen from "./screens/SquareScreen";
 import SquareScreen2 from "./screens/SquareScreen2";
 import TextScreen from "./screens/TextScreen";
+import BoxScreen from "./screens/BoxScreen";
 
 export const Routes = {
   HomeScreen: HomeScreen,
@@ -18,4 +19,5 @@ export const Routes = {
   SquareScreen: SquareScreen,
   SquareScreen2: SquareScreen2,
   TextScreen: TextScreen,
+  BoxScreen: BoxScreen,
 };
