@@ -6,6 +6,7 @@ import CounterScreen from "./screens/CounterScreen";
 import ColorScreen from "./screens/ColorScreen";
 import SquareScreen from "./screens/SquareScreen";
 import SquareScreen2 from "./screens/SquareScreen2";
+import TextScreen from "./screens/TextScreen";
 
 export const Routes = {
   HomeScreen: HomeScreen,
@@ -16,4 +17,5 @@ export const Routes = {
   ColorScreen: ColorScreen,
   SquareScreen: SquareScreen,
   SquareScreen2: SquareScreen2,
+  TextScreen: TextScreen,
 };
